@@ -1,0 +1,148 @@
+:root {
+    --green: #1e7c20 ;
+    --red:	#ff0000 ;
+    --blue: #0037fb;
+    --orange:#df6500;
+    --purple:#8100db;
+    --yellow: #f0db4d;
+    --pink:	#ff7878;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 100vh;
+}
+
+p {
+    color: white;
+    position: absolute;
+    top: 3rem;
+}
+
+.container {
+    display: flex;
+    gap: 1rem;
+}
+
+.circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: var(--red);
+    box-shadow: 1px 1px 50px var(--red);
+}
+.container.active .red {
+    animation: fade 2s linear infinite 1.4s;
+}
+
+.green {
+    background-color: var(--green);
+    box-shadow: 1px 1px 50px var(--green);
+}
+.container.active .green {
+    animation: fade 2s linear infinite 1.2s;
+}
+
+.blue {
+    background-color: var(--blue);
+    box-shadow: 1px 1px 50px var(--blue);
+}
+.container.active .blue {
+    animation: fade 2s linear infinite 1s;
+}
+
+.purple {
+    background-color: var(--purple);
+    box-shadow: 1px 1px 50px var(--purple);
+}
+.container.active .purple {
+    animation: fade 2s linear infinite .8s;
+}
+
+.yellow {
+    background-color: var(--yellow);
+    box-shadow: 1px 1px 50px var(--yellow);
+}
+.container.active .yellow {
+    animation: fade 2s linear infinite .6s;
+}
+
+.pink {
+    background-color: var(--pink);
+    box-shadow: 1px 1px 50px var(--pink);
+}
+.container.active  .pink{
+    animation: fade 2s linear infinite .4s;
+}
+
+.orange {
+    background-color: var(--orange);
+    box-shadow: 1px 1px 50px var(--orange);
+}
+.container.active .orange {
+    animation: fade 2s linear infinite .2s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        filter: brightness(0);
+        transform: translateY(50%);
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(2);
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        filter: brightness(0);
+        transform: translateY(50%);
+    }
+}
+
+.btn-toggle {
+    padding: .5rem;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    box-shadow: 1px 1px 9px cyan;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all .2s ease;
+}
+
+.btn-toggle:hover {
+    box-shadow: 1px 1px 20px cyan;
+    color: rgb(0, 77, 77);
+    scale: 1.1;
+}
+.btn-toggle:active {
+    background-color: cyan;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .container {
+        display: flex;
+        gap: .5rem;
+    }
+}
